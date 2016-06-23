@@ -4,6 +4,7 @@
 このスクリプトはdockerとdocker-composeさえ入っていれば、
 ```
 git clone https://github.com/LeoIsaac/lamp-on-docker.git
+cd lamp-on-docker
 docker-compose up -d
 ```
 ってやるだけで```/html```の中身がlocalhost:80で見れます。
