@@ -1,0 +1,25 @@
+version: '2'
+services:
+    web:
+        hostname: leo-lab
+        build: ./ubuntu
+        depends_on:
+            - db
+        links:
+            - db
+        ports:
+            - "80:80"
+        tty: true
+        volumes:
+            - ./html/:/var/www/html
+
+    db:
+        image: mysql:latest
+        hostname: mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: isaac
+            MYSQL_DATABASE: wp
+            MYSQL_USER: wp
+            MYSQL_PASSWORD: isaac
